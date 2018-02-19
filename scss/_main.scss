@@ -1,0 +1,1583 @@
+//The main colors of the page
+$color_maven_blue: #0024fc;
+$color_white: #ffffff;
+$color_pink: #FF4098;
+$color_turquoise: #95e1d3;
+$color_black: #333333;
+$color_gray: #8c8c8c;
+$color_blue: #252678;
+
+@include reset();
+
+//hr {
+//  background-color: $color_blue;
+//  //margin-top: 10px;
+//  //margin-bottom: 60px;
+//  border: none;
+//  height: 2px;
+//  opacity: 0.15;
+//}
+
+a {
+  text-decoration: none;
+  color: $color_pink;
+}
+
+.links {
+  color: $color_white;
+}
+
+.container {
+  @include wrapper();
+}
+
+h1 {
+  @extend %bold-m;
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 80px;
+  font-size: 52px;
+  line-height: 0.95;
+  color: $color_white;
+
+  @include sm-block {
+    font-size: 40px;
+    line-height: 1.15;
+  }
+  @include s-block {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+  @include xs-block {
+    font-size: 28px;
+    line-height: 1.15;
+  }
+}
+
+h2 {
+  @extend %regular-ks;
+  margin: 1em 0 0.28em;
+  font-size: 32px;
+  color: $color_white;
+  @include sm-block {
+    font-size: 48px;
+  }
+  @include s-block {
+    font-size: 36px;
+  }
+  @include xs-block {
+    font-size: 24px;
+  }
+}
+
+h3 {
+  @extend %regular-m;
+  //margin: 10px 0 40px;
+  padding-top: 80px;
+  text-align: left;
+  font-size: 26px;
+  color: $color_white;
+
+}
+
+.h3sub {
+  @extend %regular-ks;
+  //margin: 0 0 10px;
+  padding-top: 80px;
+  text-align: center;
+  font-size: 18px;
+  color: $color_white;
+}
+
+.h3sub-reg {
+  @extend %regular-ks;
+  //padding-top: 80px;
+  padding-bottom: 80px;
+  text-align: left;
+  font-size: 18px;
+  color: $color_white;
+  @include sm-block {
+    font-size: 18px;
+  }
+}
+
+.h3sub-r {
+  @extend %light-r;
+  padding: 15px 0;
+  text-align: left;
+  font-size: 16px;
+  color: $color_white;
+  @include sm-block {
+    font-size: 16px;
+  }
+}
+
+.h3about {
+  @extend %regular-r;
+  margin: 80px 0;
+  text-align: center;
+  font-size: 15px;
+  color: $color_white;
+  @include sm-block {
+    //margin: 30px 0 70px;
+  }
+}
+
+h4 {
+  @extend %regular-m;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: $color_white;
+}
+
+h5 {
+  @extend %bold-m;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: $color_white;
+}
+
+.header {
+  position: relative;
+  background-image: url('../img/hr-img1.jpeg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  //background-attachment: fixed;
+  background-size: cover;
+  text-align: left;
+  z-index: 1;
+  transition: background .5s;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#8B40C4, #8B40C4);
+    opacity: 0.2;
+    z-index: 5;
+  }
+  @include sm-block {
+    background-attachment: scroll;
+  }
+
+  .container {
+    position: relative;
+    z-index: 6;
+  }
+
+  h1 {
+    @extend %bold-m;
+    padding-top: 150px;
+    padding-bottom: 50px;
+    color: $color_white;
+    font-size: 18px;
+    @include s-block {
+      font-size: 36px;
+    }
+
+  }
+
+  h2 {
+    padding-bottom: 50px;
+  }
+
+  &__items {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    z-index: 10;
+
+    &_bg {
+      background-color: transparent;
+    }
+  }
+
+  &__logo {
+    padding: 0 30px;
+    @include md-block {
+      padding: 0 20px;
+    }
+    @include sm-block {
+      padding: 0 15px;
+    }
+    @include s-block {
+      padding: 0 10px;
+    }
+
+    a {
+      @extend %bold-m;
+      font-size: 24px;
+      color: $color_white;
+    }
+  }
+  &__btn {
+    @extend %bold-m;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    background: transparent;
+    border: 2px solid $color_white;
+    font-size: 18px;
+    color: $color_white;
+    transition: background .3s;
+    &:hover {
+      background: rgba(255, 255, 255, .2);
+      color: $color_white;
+    }
+  }
+}
+
+.header__artists {
+  position: relative;
+  background-image: url('/img/samuel-fyfe-235457.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: left;
+  z-index: 1;
+  transition: background .5s;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#8B40C4, #8B40C4);
+    opacity: 0.4;
+    z-index: 5;
+  }
+  @include sm-block {
+    background-attachment: scroll;
+  }
+
+  .container {
+    position: relative;
+    z-index: 6;
+  }
+
+  h1 {
+    @extend %bold-m;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: $color_white;
+    font-size: 70px;
+    text-transform: uppercase;
+
+  }
+
+  h2 {
+    padding-bottom: 50px;
+  }
+
+  .artists_info{
+    position: relative;
+
+    &__wrapper{
+      //margin-top: 80px;
+      background: rgba(22,22,22, 0.2);
+      margin-top: 50px;
+
+      @include row-flex();
+
+      .bachata{
+        @include col();
+        @include size(10);
+        @include size-s(12);
+        display: flex;
+        text-align: left;
+        @extend %light-r;
+        font-size: 18px;
+        color: $color_white;
+      }
+      .kizomba{
+        @include col();
+        @include size(12);
+        @include size-s(12);
+        display: flex;
+        text-align: left;
+        @extend %light-r;
+        font-size: 18px;
+        color: $color_white;
+      }
+      .zouk{
+        @include col();
+        @include size(12);
+        @include size-s(12);
+        display: flex;
+        text-align: left;
+        @extend %light-r;
+        font-size: 18px;
+        color: $color_white;
+      }
+
+
+      .description{
+        @extend %light-r;
+        font-size: 15px;
+        color: $color_white;
+        padding: 50px 15px;
+      }
+    }
+
+  }
+  .booking{
+    padding-top: 100px;
+    padding-bottom: 150px;
+    a{
+      @extend %light-r;
+      font-size: 18px;
+      color: $color_white;
+      border: 2px solid $color_pink;
+      padding: 10px 150px;
+      @include xs-block{
+        padding: 10px 100px;
+      }
+    }
+  } a{
+    @extend %bold-m;
+    //color: $color_white;
+  }
+
+  &__items {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    z-index: 10;
+
+    &_bg {
+      background-color: transparent;
+    }
+
+  }
+
+  &__logo {
+    padding: 0 30px;
+    @include md-block {
+      padding: 0 20px;
+    }
+    @include sm-block {
+      padding: 0 15px;
+    }
+    @include s-block {
+      padding: 0 10px;
+    }
+
+    a {
+      @extend %bold-m;
+      font-size: 24px;
+      color: $color_pink;
+    }
+  }
+  &__btn {
+    @extend %bold-m;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    background: transparent;
+    border: 2px solid $color_white;
+    font-size: 18px;
+    color: $color_pink;
+    transition: background .3s;
+    &:hover {
+      background: rgba(255, 255, 255, .2);
+      color: $color_white;
+    }
+  }
+}
+
+.header__artist-solo {
+  position: relative;
+  background-image: url('/img/samuel-fyfe-235457.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: left;
+  z-index: 1;
+  transition: background .5s;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#8B40C4, #8B40C4);
+    opacity: 0.4;
+    z-index: 5;
+  }
+  @include sm-block {
+    background-attachment: scroll;
+  }
+
+  .container {
+    position: relative;
+    z-index: 6;
+  }
+
+  h1 {
+    @extend %bold-m;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: $color_white;
+    font-size: 70px;
+    text-transform: uppercase;
+
+  }
+
+  h2 {
+    padding-bottom: 50px;
+  }
+
+  .artist-info{
+    position: relative;
+
+    &__wrapper{
+      //margin-top: 80px;
+      background: rgba(22,22,22, 0.2);
+      //margin-top: 50px;
+      @include row-flex();
+      //padding-top: 50px;
+      //padding-bottom: 50px;
+      font-size: 18px;
+      color: $color_white;
+      &-name{
+        @extend %bold-m;
+        padding-top: 50px;
+        padding-bottom: 20px;
+        color: $color_white;
+        font-size: 70px;
+        text-align: center;
+        //text-transform: uppercase;
+        @include sm-block {
+          font-size: 32px;
+        }
+      }
+      &-style{
+        @extend %bold-m;
+        color: $color_pink;
+        font-size: 18px;
+        text-align: center;
+        @include sm-block {
+          font-size: 16px;
+        }
+      }
+      &-country{
+        @extend %bold-m;
+        color: $color_white;
+        font-size: 16px;
+        text-align: center;
+        padding-bottom: 40px;
+      }
+      &-img{
+        align-content: center;
+      }
+
+      &-description{
+        @extend %light-r;
+        font-size: 15px;
+        color: $color_white;
+        padding: 50px 0;
+        text-align: center;
+      }
+      &-video{
+        overflow:hidden;
+        padding-bottom:40%;
+        position:relative;
+        height:0;
+        iframe{
+          left:0;
+          top:0;
+          height:100%;
+          width:100%;
+          position:absolute;
+        }
+      }
+    }
+
+  }
+  .all-artists{
+    padding-top: 100px;
+    padding-bottom: 150px;
+    a{
+      @extend %light-r;
+      font-size: 18px;
+      color: $color_white;
+      border: 2px solid $color_pink;
+      padding: 10px 150px;
+      @include xs-block{
+        padding: 10px 90px;
+      }
+    }
+  }
+  &__btn {
+    @extend %bold-m;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    background: transparent;
+    border: 2px solid $color_white;
+    font-size: 18px;
+    color: $color_pink;
+    transition: background .3s;
+    &:hover {
+      background: rgba(255, 255, 255, .2);
+      color: $color_white;
+    }
+  }
+}
+
+.header__contact {
+  position: relative;
+  background-image: url('/img/bg-contact.jpeg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: left;
+  z-index: 1;
+  transition: background .5s;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#8B40C4, #8B40C4);
+    opacity: 0.4;
+    z-index: 5;
+  }
+  @include sm-block {
+    background-attachment: scroll;
+  }
+
+  .container {
+    position: relative;
+    z-index: 6;
+  }
+
+  h1 {
+    @extend %bold-m;
+    padding-top: 150px;
+    padding-bottom: 50px;
+    color: $color_white;
+    font-size: 70px;
+    text-transform: uppercase;
+
+  }
+
+  h2 {
+    padding-bottom: 50px;
+  }
+  address{
+    @extend %light-r;
+    font-size: 18px;
+    color: $color_white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .tel{
+    font-size: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+    .email{
+      font-size: 20px;
+      color: $color_pink;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  a{
+    @extend %bold-m;
+    //color: $color_white;
+  }
+  .socials {
+    padding-top: 80px;
+
+    &__wrapper {
+      padding-bottom: 80px;
+
+    }
+    .social {
+      margin: 30px 0 30px;
+      display: flex;
+      align-items: left;
+      justify-content: left;
+
+      &__item {
+        font-size: 36px;
+        margin: 0 10px;
+        transition: all .3s;
+        &:hover {
+          transform: scale(1.15);
+        }
+        i {
+          color: $color_white;
+          &:hover {
+            color: $color_turquoise;
+          }
+        }
+      }
+    }
+    .follow {
+      //@extend %light-r;
+      //padding: 25px 0;
+      text-align: left;
+      font-size: 18px;
+      color: $color_white;
+
+      span {
+        color: $color_white;
+      }
+    }
+
+
+    .copyright {
+      @extend %light-r;
+      padding: 25px 0;
+      text-align: center;
+      font-size: 18px;
+      color: $color_white;
+
+      span {
+        color: $color_white;
+      }
+    }
+  }
+
+  &__items {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    z-index: 10;
+
+    &_bg {
+      background-color: transparent;
+    }
+
+  }
+
+  &__logo {
+    padding: 0 30px;
+    @include md-block {
+      padding: 0 20px;
+    }
+    @include sm-block {
+      padding: 0 15px;
+    }
+    @include s-block {
+      padding: 0 10px;
+    }
+
+    a {
+      @extend %bold-m;
+      font-size: 24px;
+      color: $color_pink;
+    }
+  }
+  &__btn {
+    @extend %bold-m;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    background: transparent;
+    border: 2px solid $color_white;
+    font-size: 18px;
+    color: $color_pink;
+    transition: background .3s;
+    &:hover {
+      background: rgba(255, 255, 255, .2);
+      color: $color_white;
+    }
+  }
+}
+
+.header__hotel {
+  position: relative;
+  background-image: url('/img/51_qm_hotel.jpeg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: left;
+  z-index: 1;
+  transition: background .5s;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#8B40C4, #8B40C4);
+    opacity: 0.4;
+    z-index: 5;
+  }
+  @include sm-block {
+    background-attachment: scroll;
+  }
+
+  .container {
+    position: relative;
+    z-index: 6;
+  }
+
+  h1 {
+    @extend %bold-m;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: $color_white;
+    font-size: 70px;
+    text-transform: uppercase;
+
+  }
+
+  h2 {
+    padding-bottom: 50px;
+  }
+
+  .hotel_info{
+    position: relative;
+
+    &__wrapper{
+      //margin-top: 80px;
+      background: rgba(22,22,22, 0.2);
+      margin-top: 50px;
+      @include row-flex();
+      padding-top: 50px;
+      padding-bottom: 50px;
+      address{
+        @include col();
+        @include size(6);
+        @include size-xs(12);
+        text-align: left;
+        @extend %light-r;
+        font-size: 18px;
+        color: $color_white;
+      }
+      .price{
+        @extend %bold-m;
+        font-size: 56px;
+        color: $color_pink;
+        @include s-block{
+          font-size: 32px;
+          margin: 0 auto;
+        }
+        @include xs-block{
+          margin: 0 auto;
+          font-size: 18px;
+        }
+      }
+
+      .description{
+        @extend %light-r;
+        font-size: 15px;
+        color: $color_white;
+        padding: 50px 15px;
+      }
+    }
+
+  }
+  .booking{
+    padding-top: 100px;
+    padding-bottom: 150px;
+    a{
+      @extend %light-r;
+      font-size: 18px;
+      color: $color_white;
+      border: 2px solid $color_pink;
+      padding: 10px 150px;
+      @include xs-block{
+        padding: 10px 100px;
+      }
+    }
+  }
+  .email{
+    font-size: 20px;
+    color: $color_pink;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  a{
+    @extend %bold-m;
+    //color: $color_white;
+  }
+  .socials {
+    padding-top: 80px;
+
+    &__wrapper {
+      padding-bottom: 80px;
+
+    }
+    .social {
+      margin: 30px 0 30px;
+      display: flex;
+      align-items: left;
+      justify-content: left;
+
+      &__item {
+        font-size: 36px;
+        margin: 0 10px;
+        transition: all .3s;
+        &:hover {
+          transform: scale(1.15);
+        }
+        i {
+          color: $color_white;
+          &:hover {
+            color: $color_turquoise;
+          }
+        }
+      }
+    }
+    .follow {
+      //@extend %light-r;
+      //padding: 25px 0;
+      text-align: left;
+      font-size: 18px;
+      color: $color_white;
+
+      span {
+        color: $color_white;
+      }
+    }
+
+
+    .copyright {
+      @extend %light-r;
+      padding: 25px 0;
+      text-align: center;
+      font-size: 18px;
+      color: $color_white;
+
+      span {
+        color: $color_white;
+      }
+    }
+  }
+
+  &__items {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    z-index: 10;
+
+    &_bg {
+      background-color: transparent;
+    }
+
+  }
+
+  &__logo {
+    padding: 0 30px;
+    @include md-block {
+      padding: 0 20px;
+    }
+    @include sm-block {
+      padding: 0 15px;
+    }
+    @include s-block {
+      padding: 0 10px;
+    }
+
+    a {
+      @extend %bold-m;
+      font-size: 24px;
+      color: $color_pink;
+    }
+  }
+  &__btn {
+    @extend %bold-m;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    background: transparent;
+    border: 2px solid $color_white;
+    font-size: 18px;
+    color: $color_pink;
+    transition: background .3s;
+    &:hover {
+      background: rgba(255, 255, 255, .2);
+      color: $color_white;
+    }
+  }
+}
+
+.header__tickets {
+  position: relative;
+  background-image: url('/img/pablo-heimplatz-243307.jpeg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: left;
+  z-index: 1;
+  transition: background .5s;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#8B40C4, #8B40C4);
+    opacity: 0.4;
+    z-index: 5;
+  }
+  @include sm-block {
+    background-attachment: scroll;
+  }
+
+  .container {
+    position: relative;
+    z-index: 6;
+  }
+
+  h1 {
+    @extend %bold-m;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    color: $color_white;
+    font-size: 70px;
+    text-transform: uppercase;
+
+  }
+
+  h2 {
+    padding-bottom: 50px;
+  }
+
+  .tickets_info{
+    position: relative;
+
+    &__wrapper{
+      //background: rgba(22,22,22, 0.2);
+      @include row-flex();
+      justify-content: space-between;
+
+      .ticket {
+        @include size(3);
+        @include size-md(12);
+        background: rgba(22,22,22, 0.7);
+
+        text-align: center;
+        @extend %light-r;
+        padding-top: 25px;
+        //margin: 0 15px;
+        font-size: 18px;
+        color: $color_white;
+      }
+      .price{
+        @extend %bold-m;
+        font-size: 56px;
+        color: $color_pink;
+        @include s-block{
+          font-size: 32px;
+          margin: 0px auto;
+        }
+        @include xs-block{
+          margin: 0 auto;
+          font-size: 18px;
+        }
+      }
+      .description{
+        @extend %light-r;
+        font-size: 16px;
+        color: $color_white;
+        padding: 25px 15px;
+
+      }
+      .booking{
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background-color: #8b40c4;
+        a{
+          @extend %bold-m;
+          font-size: 18px;
+          color: $color_white;
+          border: 2px solid #2A1744;
+          padding: 10px 10px;
+          text-transform: uppercase;
+          background-color: #2A1744;
+        }
+      }
+    }
+  }
+
+  .email{
+    font-size: 20px;
+    color: $color_pink;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  a{
+    @extend %bold-m;
+    //color: $color_white;
+  }
+  .socials {
+    padding-top: 80px;
+
+    &__wrapper {
+      padding-bottom: 80px;
+
+    }
+    .social {
+      margin: 30px 0 30px;
+      display: flex;
+      align-items: left;
+      justify-content: left;
+
+      &__item {
+        font-size: 36px;
+        margin: 0 10px;
+        transition: all .3s;
+        &:hover {
+          transform: scale(1.15);
+        }
+        i {
+          color: $color_white;
+          &:hover {
+            color: $color_turquoise;
+          }
+        }
+      }
+    }
+    .follow {
+      //@extend %light-r;
+      //padding: 25px 0;
+      text-align: left;
+      font-size: 18px;
+      color: $color_white;
+
+      span {
+        color: $color_white;
+      }
+    }
+
+
+    .copyright {
+      @extend %light-r;
+      padding: 25px 0;
+      text-align: center;
+      font-size: 18px;
+      color: $color_white;
+
+      span {
+        color: $color_white;
+      }
+    }
+  }
+
+  &__items {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    z-index: 10;
+
+    &_bg {
+      background-color: transparent;
+    }
+
+  }
+
+  &__logo {
+    padding: 0 30px;
+    @include md-block {
+      padding: 0 20px;
+    }
+    @include sm-block {
+      padding: 0 15px;
+    }
+    @include s-block {
+      padding: 0 10px;
+    }
+
+    a {
+      @extend %bold-m;
+      font-size: 24px;
+      color: $color_pink;
+    }
+  }
+  &__btn {
+    @extend %bold-m;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    background: transparent;
+    border: 2px solid $color_white;
+    font-size: 18px;
+    color: $color_pink;
+    transition: background .3s;
+    &:hover {
+      background: rgba(255, 255, 255, .2);
+      color: $color_white;
+    }
+  }
+}
+
+
+.menu {
+  z-index: 10;
+  @include sm-block {
+    position: absolute;
+    top: 90%;
+    width: 100%;
+    left: 0;
+    overflow: hidden;
+  }
+  &__list {
+    @extend %regular-r;
+    display: flex;
+    font-size: 14px;
+    text-transform: uppercase;
+    @include sm-block {
+      padding-bottom: 30px;
+      flex-direction: column;
+      background-image: linear-gradient(#1a1a40, #252678);
+      transform: translateY(-101%);
+      font-size: 18px;
+    }
+  }
+  &__link {
+    position: relative;
+    padding: 10px 15px;
+    display: block;
+    color: $color_white;
+    transition: all .3s;
+  }
+  &__item {
+    a {
+      position: relative;
+      padding: 10px 15px;
+      display: block;
+      color: $color_white;
+      transition: all .3s;
+      &:hover {
+        color: $color_pink;
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          margin-left: -32%;
+          width: 64%;
+          height: 2px;
+          background: $color_white;
+          @include sm-block {
+            margin-left: auto;
+            left: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &_show {
+    @include sm-block {
+      transform: translateY(0);
+    }
+  }
+}
+
+.countdown {
+  //colors
+  $color_alto_approx: #ddd;
+
+  //fonts
+  $font_0: Jura;
+  $font_1: sans-serif;
+
+  ul.counter {
+    //width: 60%;
+    padding-top: 150px;
+    padding-bottom: 200px;
+    margin: 0 auto;
+    list-style: none;
+    text-align: center;
+    font-family: $font_0, $font_1;
+    color: $color_white;
+    li {
+      width: 25%;
+      float: left;
+      @include md-block {
+
+      }
+      span {
+        &:first-child {
+          font-size: 66px;
+          padding-bottom: 10px;
+          border-bottom: $color_white 1px solid;
+          display: block;
+          margin: 0 30px;
+          @include xs-block {
+            font-size: 36px;
+          }
+        }
+        &:last-child {
+          font-size: 16px;
+          padding-top: 10px;
+          padding-bottom: 40px;
+          display: block;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+.counter {
+  //background-color: white;
+  //opacity: 0.4;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background: transparent;
+  &__wrapper {
+    display: flex;
+  }
+  &__item {
+    padding: 60px 0;
+    width: 20%;
+    text-align: center;
+    color: #fff;
+    border-right: 1px solid #fff;
+    &:first-child {
+      border-left: 1px solid #fff;
+    }
+
+    @include sm-block {
+      padding: 30px 0;
+    }
+    .amount {
+      @extend %bold-m;
+      display: block;
+      font-size: 46px;
+      @include sm-block {
+        font-size: 32px;
+      }
+    }
+    .description {
+      @extend %regular-m;
+      padding: 0 10px;
+      text-transform: uppercase;
+      font-size: 14px;
+      @include sm-block {
+        font-size: 10px;
+      }
+      @include xs-block {
+        padding: 0;
+      }
+
+    }
+  }
+}
+
+.banner-slider {
+  @include row-flex();
+  margin-top: 9em;
+  font-size: 16px;
+  @include sm-block {
+    font-size: 11px;
+  }
+  @include s-block {
+    font-size: 6px;
+  }
+  &__item {
+    @include col();
+    @include size(3);
+    @extend %regular-m;
+    position: relative;
+    padding: 1.6em 0;
+    //border-top: 2px solid $color_white;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    color: $color_white;
+
+    .slide-nr {
+      @extend %bold-m;
+      font-size: 1.5em;
+    }
+    .running-line {
+      position: absolute;
+      top: -2px;
+      left: 0;
+      height: 2px;
+      width: 0;
+      background: $color_maven_blue;
+    }
+  }
+}
+
+.menu-bnt {
+  display: none;
+  position: absolute;
+  right: 5px;
+  justify-content: center;
+  align-items: center;
+  box-sizing: content-box;
+  width: 30px;
+  height: 30px;
+  padding-right: 15px;
+  background: 0;
+  border: 0;
+  user-select: none;
+  outline: 0;
+
+  @include sm-block {
+    display: flex;
+    cursor: pointer;
+  }
+  &__icon {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 3px;
+    vertical-align: bottom;
+    background: $color_white;
+    transition: background .3s .5s;
+
+    &:before {
+      top: 10px;
+    }
+
+    &:after {
+      top: -10px;
+    }
+
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: $color_white;
+      transform-origin: 50% 50%;
+      transition: top .3s .3s, transform .3s;
+    }
+
+    &_show {
+      background-color: transparent;
+
+      &:before {
+        transform: rotate3d(0, 0, 1, 45deg);
+      }
+
+      &:after {
+        transform: rotate3d(0, 0, 1, -45deg);
+      }
+
+      &:before, &:after {
+        transition: top .3s, transform .3s .5s;
+        top: 0;
+      }
+    }
+  }
+}
+
+.about {
+  //margin-top: 100px;
+  background: $color_blue;
+  .team {
+    @include row-flex();
+    @include xs-block {
+      justify-content: center;
+    }
+
+    &__mask {
+      position: relative;
+      transition: all .5s;
+      &:hover {
+        transform: translate(-10px, -10px);
+      }
+      .mask {
+        @include maskForImg;
+        flex-direction: column;
+        font-size: 18px;
+        @include xs-block {
+          font-size: 18px;
+        }
+        &:hover {
+          opacity: 1;
+        }
+        i {
+          font-size: 1.33em;
+          margin: 0.4em;
+        }
+        span {
+          @extend %bold-m;
+          display: block;
+          font-size: 1em;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &__item {
+      @include col();
+      @include size(4);
+      @include size-xs(12);
+      cursor: pointer;
+      transition: background .5s;
+      @include xs-block {
+        margin: 15px 0;
+      }
+      &:hover {
+        position: relative;
+        background: $color_white;
+      }
+      img {
+        vertical-align: middle;
+        z-index: 1;
+        transition: all ease;
+      }
+    }
+  }
+}
+
+.direction {
+  background: $color_blue;
+
+  &__wrapper {
+    @include row-flex();
+    //margin: 40px 0 120px;
+
+    @include sm-block {
+      //margin: 40px 0 60px;
+    }
+
+    .block {
+      @include col-padding();
+      @include size(4);
+      @include size-sm(12);
+      @include size-s(12);
+      margin-top: 30px;
+      padding-bottom: 30px;
+      display: flex;
+      color: $color_white;
+
+      @include sm-block {
+        &:nth-child(-n+6) {
+          border-bottom: 1px solid #e5e5e5;
+        }
+      }
+
+      @include s-block {
+        &:nth-child(-n+6) {
+          border-bottom: 1px solid #e5e5e5;
+        }
+      }
+
+      &__icon {
+        width: 30%;
+        text-align: center;
+        @include sm-block {
+          width: 25%;
+        }
+
+        i {
+          font-size: 40px;
+          color: $color_white;
+        }
+      }
+      &__info {
+        width: 70%;
+        @include sm-block {
+          width: 75%;
+        }
+      }
+
+      &__paragraph {
+        @extend %light-r;
+        padding-top: 10px;
+        font-size: 14px;
+        line-height: 22px;
+        color: $color_white;
+      }
+    }
+  }
+}
+
+
+.contact {
+  //margin-top: 100px;
+  position: relative;
+  //background: $color_blue;
+  //background-image: url('../img/bg-contact.jpg');
+  //background-position: center center;
+  //background-repeat: no-repeat;
+  ////background-attachment: fixed;
+  //background-size: cover;
+  text-align: left;
+  @include sm-block {
+    background-attachment: scroll;
+  }
+
+  z-index: 1;
+  transition: background .5s;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#252678, #252678);
+    opacity: 0.8;
+    z-index: 5;
+  }
+  .container {
+    position: relative;
+    z-index: 6;
+  }
+  h1 {
+    font-size: 65px;
+    padding-top: 150px;
+    @include sm-block {
+      font-size: 24px;
+    }
+  }
+  p {
+    padding-bottom: 150px;
+  }
+  address{
+    @extend %light-r;
+    font-size: 18px;
+    color: $color_white;
+  }
+}
+
+.socials {
+  &__follow{
+    @extend %light-r;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 18px;
+    color: $color_white;
+
+    span {
+      color: $color_white;
+    }
+  }
+}
+
